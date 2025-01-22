@@ -28,6 +28,7 @@ import ContactForm from "./components/contact-form";
 import { AnimateIn, FadeIn } from "./components/animations";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode, Key } from "react";
 
 function getTechIcon(tech: string) {
   switch (tech.toLowerCase()) {
@@ -53,32 +54,30 @@ function LandingPageContent() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100">
-      <FadeIn delay={0.2}>
-        <header className="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center">
-          <div className="text-2xl font-bold">TechDesign</div>
-          <nav className="flex items-center space-x-4 sm:justify-end flex-wrap">
-            <ul className="flex space-x-4">
-              <li>
-                <Link
-                  href="#servicios"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  {t("nav.services")}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#contacto"
-                  className="hover:text-blue-400 transition-colors"
-                >
-                  {t("nav.contact")}
-                </Link>
-              </li>
-            </ul>
-            <LanguageSwitcher />
-          </nav>
-        </header>
-      </FadeIn>
+      <header className="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center">
+        <div className="text-2xl font-bold">TechDesign</div>
+        <nav className="flex items-center space-x-4 sm:justify-end flex-wrap">
+          <ul className="flex space-x-4">
+            <li>
+              <Link
+                href="#servicios"
+                className="hover:text-blue-400 transition-colors"
+              >
+                {t("nav.services")}
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="#contacto"
+                className="hover:text-blue-400 transition-colors"
+              >
+                {t("nav.contact")}
+              </Link>
+            </li>
+          </ul>
+          <LanguageSwitcher />
+        </nav>
+      </header>
 
       <main>
         {/* Hero Section con proyectos de muestra */}
@@ -99,30 +98,46 @@ function LandingPageContent() {
             </Button>
           </div>
 
-          <div className="relative">
+          <div className="relative flex justify-center items-center">
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900 to-gray-900 pointer-events-none"></div>
-            <div className="grid grid-cols-3 gap-4 overflow-hidden rounded-lg shadow-2xl">
-              {[1, 2, 3].map((project, index) => (
-                <FadeIn key={project} delay={0.2 * (index + 1)}>
-                  <div className="relative group overflow-hidden">
-                    <Image
-                      src={`/placeholder.svg?height=300&width=400&text=Project ${project}`}
-                      alt={`Project ${project}`}
-                      width={400}
-                      height={300}
-                      className="object-cover w-full h-64 transition-transform duration-300 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
-                      <div className="p-4">
-                        <h3 className="text-lg font-semibold mb-1">
-                          Project {project}
-                        </h3>
-                        <p className="text-sm">Brief project description.</p>
+            <div className="relative flex justify-center items-center">
+              {" "}
+              {/* Reducido el gap para acercarlos más */}
+              {[1, 2, 3].map((project, index) => {
+                const isCenter = index === 1;
+                const isLeft = index === 0;
+                const isRight = index === 2;
+
+                return (
+                  <FadeIn key={project} delay={0.2 * (index + 1)}>
+                    <div
+                      className={`relative group overflow-hidden transition-transform duration-500 ${
+                        isCenter
+                          ? "z-20 scale-125"
+                          : isLeft
+                          ? "z-10 scale-100 translate-x-[-35px]" // Acercado más a la izquierda
+                          : "z-10 scale-100 translate-x-[35px]" // Acercado más a la derecha
+                      }`}
+                    >
+                      <Image
+                        src={`/placeholder.svg?height=350&width=400&text=Project ${project}`} // Aumentando la altura de la imagen
+                        alt={`Project ${project}`}
+                        width={400}
+                        height={550} // Aumentando la altura de la imagen
+                        className="object-cover w-full h-80 transition-transform duration-300 group-hover:scale-110 " // Aumento de altura aquí también
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div className="p-4">
+                          <h3 className="text-lg font-semibold mb-1">
+                            Project {project}
+                          </h3>
+                          <p className="text-sm">Brief project description.</p>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </FadeIn>
-              ))}
+                  </FadeIn>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -175,7 +190,7 @@ function LandingPageContent() {
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc list-inside space-y-2 text-gray-200">
-                    {service.features.map((feature, i) => (
+                    {service.features.map((feature: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined, i: Key | null | undefined) => (
                       <li key={i}>{feature}</li>
                     ))}
                   </ul>
@@ -313,13 +328,11 @@ function LandingPageContent() {
           </div>
         </section>
 
-        <FadeIn>
-          <footer className="bg-gray-900 py-8 border-t border-gray-800">
-            <div className="container mx-auto px-4 text-center">
-              <p className="text-sm text-gray-400">{t("footer.copyright")}</p>
-            </div>
-          </footer>
-        </FadeIn>
+        <footer className="bg-gray-900 py-8 border-t border-gray-800">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-sm text-gray-400">{t("footer.copyright")}</p>
+          </div>
+        </footer>
       </main>
     </div>
   );

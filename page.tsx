@@ -28,7 +28,14 @@ import ContactForm from "./components/contact-form";
 import { AnimateIn, FadeIn } from "./components/animations";
 import { LanguageProvider, useLanguage } from "./contexts/LanguageContext";
 import { LanguageSwitcher } from "./components/LanguageSwitcher";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode, Key } from "react";
+import {
+  ReactElement,
+  JSXElementConstructor,
+  ReactNode,
+  ReactPortal,
+  AwaitedReactNode,
+  Key,
+} from "react";
 
 function getTechIcon(tech: string) {
   switch (tech.toLowerCase()) {
@@ -55,7 +62,14 @@ function LandingPageContent() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100">
       <header className="container mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center">
-        <div className="text-2xl font-bold">TechDesign</div>
+        <div>
+          <img
+            src="haly_logo.png"
+            alt="TechDesign Logo"
+            className="h-16 w-auto"
+          />
+        </div>
+
         <nav className="flex items-center space-x-4 sm:justify-end flex-wrap">
           <ul className="flex space-x-4">
             <li>
@@ -190,9 +204,27 @@ function LandingPageContent() {
                 </CardHeader>
                 <CardContent>
                   <ul className="list-disc list-inside space-y-2 text-gray-200">
-                    {service.features.map((feature: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode> | null | undefined, i: Key | null | undefined) => (
-                      <li key={i}>{feature}</li>
-                    ))}
+                    {service.features.map(
+                      (
+                        feature:
+                          | string
+                          | number
+                          | bigint
+                          | boolean
+                          | ReactElement<
+                              any,
+                              string | JSXElementConstructor<any>
+                            >
+                          | Iterable<ReactNode>
+                          | ReactPortal
+                          | Promise<AwaitedReactNode>
+                          | null
+                          | undefined,
+                        i: Key | null | undefined
+                      ) => (
+                        <li key={i}>{feature}</li>
+                      )
+                    )}
                   </ul>
                 </CardContent>
                 <CardFooter>

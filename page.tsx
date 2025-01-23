@@ -36,6 +36,7 @@ import {
   AwaitedReactNode,
   Key,
 } from "react";
+import { ServiceProvider, useService } from "./contexts/ServiceContext";
 
 function getTechIcon(tech: string) {
   switch (tech.toLowerCase()) {
@@ -58,6 +59,7 @@ function getTechIcon(tech: string) {
 
 function LandingPageContent() {
   const { t } = useLanguage();
+  const { setSelectedService } = useService();
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-gray-100">
@@ -73,20 +75,28 @@ function LandingPageContent() {
         <nav className="flex items-center space-x-4 sm:justify-end flex-wrap">
           <ul className="flex space-x-4">
             <li>
-              <Link
-                href="#servicios"
+              <button
+                onClick={() => {
+                  document
+                    .getElementById("servicios")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
                 className="hover:text-blue-400 transition-colors"
               >
                 {t("nav.services")}
-              </Link>
+              </button>
             </li>
             <li>
-              <Link
-                href="#contacto"
+              <button
+                onClick={() => {
+                  document
+                    .getElementById("contacto")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
                 className="hover:text-blue-400 transition-colors"
               >
                 {t("nav.contact")}
-              </Link>
+              </button>
             </li>
           </ul>
           <LanguageSwitcher />
@@ -106,9 +116,16 @@ function LandingPageContent() {
               className="bg-blue-600 hover:bg-blue-700 mb-12"
               asChild
             >
-              <Link href="#contacto">
+              <button
+                onClick={() => {
+                  document
+                    .getElementById("contacto")
+                    .scrollIntoView({ behavior: "smooth" });
+                }}
+                className="flex items-center"
+              >
                 {t("hero.cta")} <ChevronRight className="ml-2" />
-              </Link>
+              </button>
             </Button>
           </div>
 
@@ -180,18 +197,21 @@ function LandingPageContent() {
                 title: t("services.web.title"),
                 description: t("services.web.description"),
                 features: t("services.web.features"),
+                contactContext: "webCreation",
               },
               {
                 icon: <Layers className="w-10 h-10 mb-4 text-purple-400" />,
                 title: t("services.mvp.title"),
                 description: t("services.mvp.description"),
                 features: t("services.mvp.features"),
+                contactContext: "mvpDevelopment",
               },
               {
                 icon: <Code className="w-10 h-10 mb-4 text-green-400" />,
                 title: t("services.custom.title"),
                 description: t("services.custom.description"),
                 features: t("services.custom.features"),
+                contactContext: "customWebDevelopment",
               },
             ].map((service, index) => (
               <Card className="bg-gray-800 border-gray-700 text-gray-100">
@@ -228,7 +248,18 @@ function LandingPageContent() {
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button className="w-full">{t("services.cta")}</Button>
+                  <Button
+                    className="w-full"
+                    onClick={() => {
+                      setSelectedService(service.contactContext); // Cambia el contexto
+                      document
+                        .getElementById("contacto")
+                        .scrollIntoView({ behavior: "smooth" }); // Desplaza a la sección #contacto
+                    }}
+                  >
+                    {" "}
+                    {t("services.cta")}
+                  </Button>
                 </CardFooter>
               </Card>
             ))}
@@ -373,7 +404,9 @@ function LandingPageContent() {
 export default function LandingPage() {
   return (
     <LanguageProvider>
-      <LandingPageContent />
+      <ServiceProvider>
+        <LandingPageContent />
+      </ServiceProvider>
     </LanguageProvider>
   );
 }

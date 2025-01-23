@@ -10,9 +10,9 @@ export const translations = {
       cta: "Start your project",
     },
     about: {
-      title: "What we do",
+      title: "Free up your time and let us handle your website!",
       description:
-        "At TechDesign, we merge creativity and technology to create innovative web solutions that drive your business growth. Our team of experts works tirelessly to turn your vision into an impactful digital reality.",
+        "We understand how much time and effort it takes to deliver an outstanding digital experience. Focus on what truly matters to you, and leave the rest to us. We'll provide tailored solutions designed to meet your specific needs and goals. Our team is here to take care of the design, development, and maintenance of your website. This way, you can focus on your core priorities while we ensure your online presence is nothing short of excellent.",
     },
     services: {
       title: "Our Services",
@@ -58,10 +58,20 @@ export const translations = {
       description:
         "We're here to help you take your digital presence to the next level. Tell us about your project and together we'll create something extraordinary.",
       form: {
+        contactInformation: "Contact Information",
         name: "Your name",
         email: "Your email",
         message: "Your message",
         submit: "Send message",
+        webCreation: "Web Creation",
+        mvpDevelopment: "MVP Development",
+        customWebDevelopment: "Custom Web Development",
+        interestedIn: "Interested in",
+        budget: "Budget in USD",
+        under10k: "<500",
+        TenTo50k: "500-5000",
+        fiftyTo120k: "5000-10000",
+        above120k: ">10000",
       },
       success: "Message sent",
       successDesc: "Thank you for contacting us. We'll respond soon.",
@@ -73,7 +83,7 @@ export const translations = {
   es: {
     nav: {
       services: "Servicios",
-      contact: "Contacto",
+      contact: "Contáctanos",
     },
     hero: {
       title: "Donde la innovación se encuentra con el diseño",
@@ -81,9 +91,9 @@ export const translations = {
       cta: "Comienza tu proyecto",
     },
     about: {
-      title: "Lo que hacemos",
+      title: "¡Libera tu tiempo y déjanos encargarnos de tu sitio web!",
       description:
-        "En TechDesign, fusionamos creatividad y tecnología para crear soluciones web innovadoras que impulsan el crecimiento de tu negocio. Nuestro equipo de expertos trabaja incansablemente para convertir tu visión en una realidad digital impactante.",
+        "Sabemos cuánto tiempo y esfuerzo se necesita para ofrecer una experiencia digital excepcional. Concéntrate en lo que realmente importa para ti y deja el resto en nuestras manos. Proporcionaremos soluciones personalizadas diseñadas para cumplir con tus necesidades y objetivos específicos. Nuestro equipo está aquí para encargarse del diseño, desarrollo y mantenimiento de tu sitio web. Así podrás enfocarte en tus prioridades principales mientras nosotros nos aseguramos de que tu presencia en línea sea impecable.",
     },
     services: {
       title: "Nuestros Servicios",
@@ -93,7 +103,7 @@ export const translations = {
         features: ["Diseño responsivo", "Optimización SEO", "Integración de CMS"],
       },
       mvp: {
-        title: "MVP Development",
+        title: "Desarrollo MVP",
         description: "Lanza tu producto mínimo viable",
         features: ["Desarrollo ágil", "Prototipado rápido", "Iteración continua"],
       },
@@ -130,10 +140,20 @@ export const translations = {
       description:
         "Estamos aquí para ayudarte a llevar tu presencia digital al siguiente nivel. Cuéntanos sobre tu proyecto y juntos crearemos algo extraordinario.",
       form: {
+        contactInformation: "Información de contacto",
         name: "Tu nombre",
         email: "Tu email",
         message: "Tu mensaje",
         submit: "Enviar mensaje",
+        interestedIn: "Interesado en",
+        webCreation: "Creación Web",
+        mvpDevelopment: "Desarrollo MVP",
+        customWebDevelopment: "Desarrollo Web Personalizado",
+        budget: "Presupuesto en MXN",
+        under10k: "<10,000",
+        TenTo50k: "10,000 - 50,000",
+        fiftyTo120k: "50,000 - 120,000",
+        above120k: ">120,000",
       },
       success: "Mensaje enviado",
       successDesc: "Gracias por contactarnos. Te responderemos pronto.",

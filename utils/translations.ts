@@ -5,10 +5,10 @@ export const translations = {
       contact: "Contact",
     },
     hero: {
-      title: "Where innovation meets design",
+      title: "Let us handle the details.",
       subtitle:
-        "We transform ideas into exceptional digital experiences to drive your company's success.",
-      cta: "Start your project",
+        "We craft seamless digital solutions, so you can focus on your core business and goals.",
+      cta: "Get started",
     },
     about: {
       title: "Free up your time and let us handle your website!",
@@ -102,15 +102,15 @@ export const translations = {
       contact: "Contáctanos",
     },
     hero: {
-      title: "Donde la innovación se encuentra con el diseño",
+      title: "Libera tu tiempo y enfócate en el crecimiento.",
       subtitle:
-        "Transformamos ideas en experiencias digitales excepcionales para impulsar el éxito de tu empresa.",
+        "Deja la experiencia digital en nuestras manos y observa cómo tu negocio prospera mientras nos aseguramos de que todo funcione a la perfección.",
       cta: "Comienza tu proyecto",
     },
     about: {
       title: "Libérate de tiempo y deja que nos encarguemos de tu sitio web.",
-"description1": "Sabemos lo que cuesta crear experiencias digitales excepcionales. Déjanos los detalles y"
-,
+      description1:
+        "Sabemos lo que cuesta crear experiencias digitales excepcionales. Déjanos los detalles y",
       description2:
         " Ofrecemos soluciones a medida y nos encargamos del diseño, desarrollo y mantenimiento de tu sitio web.",
       description3: "",

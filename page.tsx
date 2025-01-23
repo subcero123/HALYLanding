@@ -178,8 +178,18 @@ function LandingPageContent() {
         <section className="bg-gray-800 py-16">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-semibold mb-6">{t("about.title")}</h2>
+            <p className="text-lg max-w-3xl mx-auto mb-6">
+              {t("about.description1")}
+              <span className="text-blue-400 font-semibold">
+                {t("about.highlight1")}
+              </span>
+              {t("about.description2")}
+            </p>
             <p className="text-lg max-w-3xl mx-auto">
-              {t("about.description")}
+              {t("about.description3")}
+              <span className="text-blue-400 font-semibold">
+                {t("about.highlight2")}
+              </span>
             </p>
           </div>
         </section>

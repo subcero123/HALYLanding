@@ -6,14 +6,21 @@ export const translations = {
     },
     hero: {
       title: "Where innovation meets design",
-      subtitle: "We transform ideas into exceptional digital experiences to drive your company's success.",
+      subtitle:
+        "We transform ideas into exceptional digital experiences to drive your company's success.",
       cta: "Start your project",
     },
     about: {
       title: "Free up your time and let us handle your website!",
-      description:
-        "We understand how much time and effort it takes to deliver an outstanding digital experience. Focus on what truly matters to you, and leave the rest to us. We'll provide tailored solutions designed to meet your specific needs and goals. Our team is here to take care of the design, development, and maintenance of your website. This way, you can focus on your core priorities while we ensure your online presence is nothing short of excellent.",
+      description1:
+        "We know the effort behind great digital experiences. Let us handle the details so you can focus on what matters most.",
+      description2:
+        " We provide tailored solutions and take care of your website’s design, development, and maintenance.",
+      description3: "",
+      highlight1: " Focus on what matters most, and leave the rest to us.",
+      highlight2: "",
     },
+
     services: {
       title: "Our Services",
       web: {
@@ -24,19 +31,28 @@ export const translations = {
       mvp: {
         title: "MVP Development",
         description: "Launch your minimum viable product",
-        features: ["Agile development", "Rapid prototyping", "Continuous iteration"],
+        features: [
+          "Agile development",
+          "Rapid prototyping",
+          "Continuous iteration",
+        ],
       },
       custom: {
         title: "Custom Web Development",
         description: "Advanced web solutions",
-        features: ["Complex web applications", "API integrations", "Enterprise scalability"],
+        features: [
+          "Complex web applications",
+          "API integrations",
+          "Enterprise scalability",
+        ],
       },
       cta: "Request a quote",
       examples: {
         title: "Project Examples",
         web: {
           title: "E-commerce Website",
-          description: "A fully responsive online store with integrated payment gateway and inventory management.",
+          description:
+            "A fully responsive online store with integrated payment gateway and inventory management.",
         },
         mvp: {
           title: "Fitness Tracking App",
@@ -87,30 +103,50 @@ export const translations = {
     },
     hero: {
       title: "Donde la innovación se encuentra con el diseño",
-      subtitle: "Transformamos ideas en experiencias digitales excepcionales para impulsar el éxito de tu empresa.",
+      subtitle:
+        "Transformamos ideas en experiencias digitales excepcionales para impulsar el éxito de tu empresa.",
       cta: "Comienza tu proyecto",
     },
     about: {
-      title: "¡Libera tu tiempo y déjanos encargarnos de tu sitio web!",
-      description:
-        "Sabemos cuánto tiempo y esfuerzo se necesita para ofrecer una experiencia digital excepcional. Concéntrate en lo que realmente importa para ti y deja el resto en nuestras manos. Proporcionaremos soluciones personalizadas diseñadas para cumplir con tus necesidades y objetivos específicos. Nuestro equipo está aquí para encargarse del diseño, desarrollo y mantenimiento de tu sitio web. Así podrás enfocarte en tus prioridades principales mientras nosotros nos aseguramos de que tu presencia en línea sea impecable.",
+      title: "Libérate de tiempo y deja que nos encarguemos de tu sitio web.",
+"description1": "Sabemos lo que cuesta crear experiencias digitales excepcionales. Déjanos los detalles y"
+,
+      description2:
+        " Ofrecemos soluciones a medida y nos encargamos del diseño, desarrollo y mantenimiento de tu sitio web.",
+      description3: "",
+      highlight1:
+        " enfócate en lo que realmente importa y deja el resto en nuestras manos.",
+      highlight2: "",
     },
+
     services: {
       title: "Nuestros Servicios",
       web: {
         title: "Creación Web",
         description: "Sitios web a medida y optimizados",
-        features: ["Diseño responsivo", "Optimización SEO", "Integración de CMS"],
+        features: [
+          "Diseño responsivo",
+          "Optimización SEO",
+          "Integración de CMS",
+        ],
       },
       mvp: {
         title: "Desarrollo MVP",
         description: "Lanza tu producto mínimo viable",
-        features: ["Desarrollo ágil", "Prototipado rápido", "Iteración continua"],
+        features: [
+          "Desarrollo ágil",
+          "Prototipado rápido",
+          "Iteración continua",
+        ],
       },
       custom: {
         title: "Desarrollo Web Personalizado",
         description: "Soluciones web avanzadas",
-        features: ["Aplicaciones web complejas", "Integraciones API", "Escalabilidad empresarial"],
+        features: [
+          "Aplicaciones web complejas",
+          "Integraciones API",
+          "Escalabilidad empresarial",
+        ],
       },
       cta: "Solicitar presupuesto",
       examples: {
@@ -162,5 +198,4 @@ export const translations = {
       copyright: "© 2025 TechDesign. Todos los derechos reservados.",
     },
   },
-}
-
+};

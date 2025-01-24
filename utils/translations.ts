@@ -123,6 +123,23 @@ export const translations = {
       subtitle:
         "Deja la experiencia digital en nuestras manos y observa cómo tu negocio prospera mientras nos aseguramos de que todo funcione a la perfección.",
       cta: "Comienza tu proyecto",
+      examples: {
+        1: {
+          title: "Sistema de Gestión de Alquiler de Autos",
+          description:
+            "Una plataforma basada en la nube para gestionar alquileres de autos y reservas.",
+        },
+        2: {
+          title: "Sistema de Planificación de Recursos Empresariales",
+          description:
+            "Una solución ERP integral adaptada para una empresa manufacturera, integrando todos los procesos empresariales.",
+        },
+        3: {
+          title: "Sistema de Gestión de Recursos Humanos",
+          description:
+            "Una plataforma de recursos humanos basada en la nube para gestionar datos de empleados, nómina y beneficios.",
+        },
+      }
     },
     about: {
       title: "Libérate de tiempo y deja que nos encarguemos de tu sitio web.",

@@ -133,7 +133,6 @@ function LandingPageContent() {
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-gray-900 to-gray-900 pointer-events-none"></div>
             <div className="relative flex justify-center items-center">
               {" "}
-              {/* Reducido el gap para acercarlos más */}
               {[1, 2, 3].map((project, index) => {
                 const isCenter = index === 1;
                 const isLeft = index === 0;
@@ -147,22 +146,24 @@ function LandingPageContent() {
                           ? "z-20 scale-125"
                           : isLeft
                           ? "z-10 scale-100 translate-x-[-35px]" // Acercado más a la izquierda
-                          : "z-10 scale-100 translate-x-[35px]" // Acercado más a la derecha
+                          : "z-10 scale-100 translate-x-[50px]" // Acercado más a la derecha
                       }`}
                     >
                       <Image
-                        src={`/placeholder.svg?height=350&width=400&text=Project ${project}`} // Aumentando la altura de la imagen
+                        src={`/portfolio${project}.png`} // Aumentando la altura de la imagen
                         alt={`Project ${project}`}
                         width={400}
                         height={550} // Aumentando la altura de la imagen
-                        className="object-cover w-full h-80 transition-transform duration-300" // Aumento de altura aquí también
+                        className="object-cover object-left w-full h-80 transition-transform duration-300" // Aumento de altura aquí también
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                         <div className="p-4">
                           <h3 className="text-lg font-semibold mb-1">
-                            Project {project}
+                            {t(`hero.examples.${project}.title`)}
                           </h3>
-                          <p className="text-sm">Brief project description.</p>
+                          <p className="text-sm">
+                            {t(`hero.examples.${project}.description`)}
+                          </p>
                         </div>
                       </div>
                     </div>

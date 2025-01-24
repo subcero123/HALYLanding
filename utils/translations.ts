@@ -9,6 +9,23 @@ export const translations = {
       subtitle:
         "We craft seamless digital solutions, so you can focus on your core business and goals.",
       cta: "Get started",
+      examples: {
+        1: {
+          title: "Car Rental Management System",
+          description:
+            "A cloud-based platform for managing car rentals, and reservations.",
+        },
+        2: {
+          title: "Enterprise Resource Planning System",
+          description:
+            "A comprehensive ERP solution tailored for a manufacturing company, integrating all business processes.",
+        },
+        3: {
+          title: "HR Management System",
+          description:
+            "A cloud-based HR platform for managing employee data, payroll, and benefits.",
+        },
+      }
     },
     about: {
       title: "Free up your time and let us handle your website!",
